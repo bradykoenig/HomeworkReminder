@@ -149,11 +149,11 @@ function checkDeadlines() {
                 moment(deadline).isAfter(now)
             ) {
                 channel.send(
-                    `⏰ Reminder: Homework "${title}" is due tomorrow!`,
+                    `⏰ Reminder: Homework "${title}" is due tomorrow! @everyone`,
                 );
                 sentReminders[deadlineKey] = true; // Mark reminder as sent
             } else if (moment(deadline).isSameOrBefore(now)) {
-                channel.send(`⏰ Reminder: Homework "${title}" is due now!`);
+                channel.send(`⏰ Reminder: Homework "${title}" is due now! @everyone`);
                 delete homeworkDeadlines[title]; // Remove homework after sending reminder
             }
         }
